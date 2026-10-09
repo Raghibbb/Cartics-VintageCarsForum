@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #1f4d3a;        
+  --green-dark: #153628;   
+  --text: #1a1a1a;         
+  --text-muted: #555555;   
+  --border: #767676;       
+  --line: #dcdcdc;         
+  --white: #ffffff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;  
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+a {
+  color: inherit;
+}
+
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+.art-panel {
+  position: relative;            
+  height: 240px;                 
+  background-image: url("../img/cartics-graphic.jpeg");
+  background-size: cover;        
+  background-position: center 60%;
+  background-repeat: no-repeat;
+}
+
+.art-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+
+.art-text {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  color: var(--white);
+}
+
+.art-title {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.art-caption {
+  font-size: 14px;
+  max-width: 420px;
+}
+
+
+
+.form-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  margin-right: auto;            
+  display: block;
+}
+
+.logo-img {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+
+.signup-text {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.icon-button:hover {
+  background-color: #f0f0f0;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 380px;             
+  margin: 40px auto;             
+}
+
+.form-title {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  margin-bottom: 24px;
+  color: var(--text-muted);
+}
+
+
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-google {
+  background-color: var(--white);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-google:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-primary {
+  margin-top: 8px;
+  background-color: var(--green);
+  color: var(--white);
+  border: 1px solid var(--green);
+}
+
+.btn-primary:hover {
+  background-color: var(--green-dark);
+}
+
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--line);
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.remember label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.remember input {
+  width: 18px;
+  height: 18px;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.terms {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.terms .link {
+  font-size: 13px;
+}
+
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid #1a6fd4;
+  outline-offset: 2px;
+}
+
+
+@media (min-width: 768px) {
+  .art-panel {
+    height: 320px;
+  }
+
+  .art-title {
+    font-size: 32px;
+  }
+
+  .form-panel {
+    padding: 32px 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-page {
+    flex-direction: row;         
+  }
+
+  .art-panel {
+    flex: 1;                   
+    height: auto;
+    min-height: 100vh;
+    background-position: center;
+  }
+
+  .art-text {
+    left: 48px;
+    right: 48px;
+    bottom: 48px;
+  }
+
+  .art-title {
+    font-size: 40px;
+  }
+
+  .art-caption {
+    font-size: 16px;
+  }
+
+  .form-panel {
+    flex: 1;
+    padding: 32px 64px;
+  }
+
+  .form-box {
+    margin: auto;                
+  }
+}
